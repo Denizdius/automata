@@ -349,8 +349,8 @@ if __name__ == "__main__":
     # One can modify leftmost_derive to perform breadth-first search and get the shortest possible derivation.
 
     # STEP 2: Test the CFG.
-    some_strings_in_language = ["", "01", "001011"]
-    some_strings_not_in_language = ["0110", "10", "0", "1"]
+    some_strings_in_language = ["", "00", "0110" , "001100" ,"11"]
+    some_strings_not_in_language = ["010", "10", "0", "1" , "001011"]
     cfg.perform_tests(
         some_strings_in_language,
         some_strings_not_in_language,

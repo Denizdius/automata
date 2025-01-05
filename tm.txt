@@ -23,23 +23,19 @@
 # Empty lines and comment lines (i.e., lines which start with "#") will be discarded.
 
 # === BELOW IS THE TM ===
-q1 : # > r : q8
-q8 : x > r : q8
+
+
+q1 : s > x, r : q2
+q2 : s, y > r : q2
+q2 : m > y, r : q3
+q3 : m > y, r : q4
+q4 : m, z > r : q4
+q4 : t > z, r : q5
+q5 : t > z, r : q6
+q6 : t > z, r : q7
+q7 : s, m, t, y, z, . > l : q7
+q7 : x > r : q1
+q1 : y > r : q8
+q8 : y, z > r : q8
 q8 : . > r : accept
 
-q1 : 1 > x, r : q3
-q3 : 0, 1 > r : q3
-q3 : # > r : q5
-q5 : x > r : q5
-q5 : 1 > x, l : q6
-
-q1 : 0 > x, r : q2
-q2 : 0, 1 > r : q2
-q2 : # > r : q4
-q4 : x > r : q4
-q4 : 0 > x, l : q6
-
-q6 : x > l : q6
-q6 : # > l : q7
-q7 : 0, 1 > l : q7
-q7 : x > r : q1

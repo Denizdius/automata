@@ -17,7 +17,10 @@
 # Empty lines and comment lines (i.e., lines which start with "#") will be discarded.
 
 # === BELOW IS THE GRAMMAR ===
-S > 0S1 | SS | e
+
+S > 0S0 | A | e 
+A > 11A | e
+
 
 # Alternative grammar for the same language: S > 0S1 | e | 01S
 # Alternative grammar for the same language: S > 0S1S | e

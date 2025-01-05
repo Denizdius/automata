@@ -117,6 +117,7 @@ class TM:
         tape[head] = symbol
 
     def _simulate(self, tape: list[str], state: str, head: int) -> bool:
+        print(f"State: {state}, Head: {head}, Symbol: {self._read_tape(tape, head)}, Tape: {''.join(tape)}")
         if state == "accept":
             return True
 
@@ -177,6 +178,6 @@ if __name__ == "__main__":
     tm = TM.from_transitions(start_state, transitions)
 
     # Test the Turing Machine
-    some_strings_in_language = ["#", "11#11", "101#101", "000100#000100"]
-    some_strings_not_in_language = ["1", "01", "1#0", "01#11", "0000#1111"]
+    some_strings_in_language = ["smmttt"]
+    some_strings_not_in_language = ["s", "smt", "smmtt", "smmmtttt"]
     tm.perform_tests(some_strings_in_language, some_strings_not_in_language)

@@ -19,10 +19,25 @@
 
 # === BELOW IS THE NPDA ===
 # Transitions (one line for each transition):
+
+
+
 q0 : e, e > $ : q1
-q1 : 0, e > x : q1
-q1 : 1, x > e : q1
-q1 : e, $ > e : q2
+q1 : 1, e > 1 : q2
+q2 : 1, e > 1 : q2
+q2 : 0, e > 0 : q2
+q2 : #, e > e : q3
+q3 : 1, 0 > e : q4
+q4 : 1, 0 > e : q4
+q4 : 0, 1 > e : q5
+q5 : 0, 1 > e : q5
+q5 : 0, 0 > e : q6
+q5 : 1, 1 > e : q6
+q3 : 0, 1 > e : q6
+q6 : 0 ,0 > e : q6
+q6 : 1, 1 > e : q6
+q6 : e, $ > e : q7
+q5 : e, $ > e : q7
 
 # Accept states as comma separated values:
-q2
+q7

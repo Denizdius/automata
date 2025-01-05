@@ -195,8 +195,8 @@ if __name__ == "__main__":
     )
 
     # STEP 2: Test the NPDA.
-    some_strings_in_language = ["", "01", "001011"]
-    some_strings_not_in_language = ["0110", "10", "0", "1"]
+    some_strings_in_language = ["1#0", "10#10", "110#101", "111#011" , "1001#0001"]
+    some_strings_not_in_language = ["", "0#1", "111#001", "101#010" , "1001#01100"]
     npda.perform_tests(some_strings_in_language, some_strings_not_in_language)
 
     # TODO: Display a path for accepted strings
